@@ -4,7 +4,7 @@ FROM docker.io/ubuntu:14.04
 # It's 32 bit, so we need to install some multilib stuff.
 RUN dpkg --add-architecture i386
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y build-essential libc6:i386 libncurses5:i386 libstdc++6:i386 multiarch-support
+RUN apt-get install -y build-essential libc6:i386 libncurses5:i386 libstdc++6:i386 multiarch-support libncurses-dev
 COPY toolchain-downstream /opt/toolchain
 ENV PATH=/opt/toolchain/bin:$PATH
 ENTRYPOINT /bin/bash
