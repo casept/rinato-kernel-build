@@ -17,3 +17,7 @@ To run the image:
 ```sh
 docker run -v path/to/kernel/sources:/src --rm -it rinato-downstream-build 
 ```
+
+Alternatively, the toolchain is also provided as a Nix flake.
+In this case, all binaries are prefixed with `rinato-` to avoid collisions
+with e.g. a newer ARM toolchain in the same env.
